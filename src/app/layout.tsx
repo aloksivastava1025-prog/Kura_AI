@@ -16,8 +16,47 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Aesthetic Blueprints — Discover AI Art, Photography & Design",
-  description: "A premium visual-first social discovery platform. Explore variable-height bento grids or experience the immersive vertical drum-scroll feed.",
+  title: {
+    default: "Kura AI — Discover AI Art, Photography & Design",
+    template: "%s | Kura AI",
+  },
+  description: "A premium visual-first social discovery platform. Explore infinite grids of AI-generated art, aesthetic design inspiration, and high-res photography.",
+  keywords: ["AI Art", "Midjourney prompts", "Design inspiration", "Aesthetic blueprints", "Pinterest alternative", "Photography portfolio", "Visual discovery"],
+  authors: [{ name: "Kura AI Team" }],
+  creator: "Kura AI",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://kura-ai.vercel.app/",
+    siteName: "Kura AI",
+    title: "Kura AI — Discover Premium AI Art & Design",
+    description: "The ultimate aesthetic platform for AI artists and designers to showcase their work, share prompts, and build an audience.",
+    images: [
+      {
+        url: "/images/eternal_archive.png", // Fallback OG image
+        width: 1200,
+        height: 630,
+        alt: "Kura AI Discovery Grid",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kura AI — Discover Premium AI Art & Design",
+    description: "The ultimate aesthetic platform for AI artists and designers to showcase their work.",
+    images: ["/images/eternal_archive.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 import { ToastProvider } from "@/components/ui/Toast";
