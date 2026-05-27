@@ -105,15 +105,13 @@ export default function Sidebar({
             onTabChange("home");
           }}
           className={`flex items-center mb-10 cursor-pointer hover:opacity-90 transition-all duration-300 w-full ${
-            isCollapsed ? "justify-center" : "px-2 py-1 gap-[2px]"
+            isCollapsed ? "justify-center" : "px-2 py-1 gap-1"
           }`}
         >
-          <div className={`flex items-center justify-center shrink-0 transition-all duration-300 hover:text-orange-primary ${
+          <div className={`flex items-center justify-center shrink-0 transition-all duration-300 ${
             theme === "dark" ? "text-white" : "text-gray-900"
           }`}>
-            <svg width="22" height="28" viewBox="0 0 14 24" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="butt">
-              <path d="M12 3 L3 12 L12 21" strokeLinejoin="round" />
-            </svg>
+            <span className="font-display font-black text-[32px] leading-none">K</span>
           </div>
           {!isCollapsed && (
             <span className={`font-sans font-extrabold text-[28px] tracking-tighter animate-fade-in whitespace-nowrap ${

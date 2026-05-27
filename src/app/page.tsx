@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Sparkles, Image as ImageIcon, Paintbrush, Grid, Sliders, ChevronDown } from "lucide-react";
+import { Search, Sparkles, Image as ImageIcon, Paintbrush, Grid, Sliders, ChevronDown, Sun, Moon } from "lucide-react";
 import { Post } from "@/lib/types";
 import { api } from "@/lib/api";
 import Sidebar from "@/components/layout/Sidebar";
@@ -521,23 +521,29 @@ export default function Home() {
       }`}>
 
         {/* Mobile Top Navbar (since sidebar is hidden) */}
-        <div className={`md:hidden fixed left-0 right-0 top-0 z-50 w-full px-4 py-3 flex items-center justify-between border-b backdrop-blur-md transition-colors duration-300 ${
+        <div className={`md:hidden fixed left-0 right-0 top-0 z-50 w-full px-4 py-3 flex items-center justify-center border-b backdrop-blur-md transition-colors duration-300 ${
           theme === "dark" ? "bg-[#161616]/95 border-[#2A2A2A] text-white" : "bg-white/95 border-gray-200 text-gray-900 shadow-sm"
         }`}>
-          <div className="flex items-center gap-2">
-            <div className={`w-8 h-8 flex items-center justify-center shrink-0 transition-all duration-300 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}>
-              <svg width="20" height="20" viewBox="0 0 14 24" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="butt">
-                <path d="M12 3 L3 12 L12 21" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <span className={`font-sans font-extrabold text-[20px] tracking-tighter whitespace-nowrap ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-              ura<span className="text-orange-primary text-2xl leading-[0] relative top-[2px]">.</span>
+          {/* Theme Toggle for Mobile - Absolute Left */}
+          <button
+            onClick={() => setTheme(t => t === "dark" ? "light" : "dark")}
+            className="absolute left-4 p-2 rounded-full text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white transition-all"
+          >
+            {theme === "dark" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+          </button>
+
+          {/* Logo - Centered */}
+          <div className="flex items-center gap-0.5">
+            <span className={`font-display font-black text-[24px] leading-none ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+              K
+            </span>
+            <span className={`font-sans font-extrabold text-[22px] tracking-tighter whitespace-nowrap ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+              ura<span className="text-orange-primary text-2xl leading-[0] relative top-[1px]">.</span>
             </span>
           </div>
-          {/* Feed Toggle for Mobile */}
-          <div className={`flex items-center p-0.5 rounded-[9px] border transition-colors ${
+          
+          {/* Feed Toggle for Mobile - Absolute Right */}
+          <div className={`absolute right-4 flex items-center p-0.5 rounded-[9px] border transition-colors ${
             theme === "dark" ? "bg-[#222] border-[#333]" : "bg-gray-100 border-gray-200"
           }`}>
             <button

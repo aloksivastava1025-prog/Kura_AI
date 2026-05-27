@@ -69,6 +69,7 @@ export default function DrumScroll({
             <img
               src={post.thumbnailUrl}
               alt={post.title}
+              loading="lazy"
               className="w-full h-full object-contain relative z-10 select-none pointer-events-none drop-shadow-2xl"
             />
 
