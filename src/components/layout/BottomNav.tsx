@@ -6,6 +6,7 @@ interface BottomNavProps {
   currentTab: "home" | "profile";
   onTabChange: (tab: "home" | "profile") => void;
   onUploadClick: () => void;
+  onNotificationsClick: () => void;
   activeUser: { userName: string } | null;
 }
 
@@ -13,6 +14,7 @@ export default function BottomNav({
   currentTab,
   onTabChange,
   onUploadClick,
+  onNotificationsClick,
   activeUser,
 }: BottomNavProps) {
   return (
@@ -45,6 +47,7 @@ export default function BottomNav({
       </button>
 
       <button
+        onClick={onNotificationsClick}
         className="p-2 rounded-full text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-all duration-300 relative"
       >
         <Bell className="w-[26px] h-[26px] stroke-[2px]" />

@@ -398,6 +398,8 @@ export default function Home() {
       filtered = filtered.filter((post) => 
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.userName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.userHandle.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
       );
     }
@@ -701,6 +703,7 @@ export default function Home() {
             }
           }}
           onUploadClick={() => requireAuth(() => setIsUploadOpen(true))}
+          onNotificationsClick={() => addToast("Notifications coming soon!", "info")}
           activeUser={activeUser}
         />
       </div>
