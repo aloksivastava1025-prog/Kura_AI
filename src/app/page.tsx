@@ -364,7 +364,7 @@ export default function Home() {
       
       const res = await api.createPost(dataForBackend);
       if (res.post) {
-        setPosts([res.post, ...posts]);
+        setPosts((prevPosts) => [res.post, ...prevPosts]);
         addToast("Post published successfully!", "success");
       }
     } catch (err) {
