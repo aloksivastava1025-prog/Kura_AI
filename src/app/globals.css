@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange-primary: #FF4500;
+  --color-orange-hover: #E63E00;
+  --color-orange-light: #FFF0E6;
+  
+  --color-bg-layout: #F8F9FA;
+  --color-bg-card: #FFFFFF;
+  --color-bg-dark: #0D0F10;
+  
+  --color-txt-primary: #111111;
+  --color-txt-secondary: #71717A;
+  --color-txt-light: #A1A1AA;
+  
+  --radius-card: 4px;
+  
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), system-ui, sans-serif;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--color-bg-layout);
+  color: var(--color-txt-primary);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-panel-dark {
+  background: rgba(13, 15, 16, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E4E4E7;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+
+/* Drum Scroll Utilities */
+.drum-container {
+  height: calc(100vh - 64px); /* Subtract header height */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-dark);
+}
+
+.drum-slide {
+  height: calc(100vh - 64px);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+}
+
+/* Grid Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide standard HTML scrollbar for drum scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Premium Design Grid Background Patterns */
+.light-grid-pattern {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: left top;
+}
+
+.dark-grid-pattern {
+  background-color: #0E0E10;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: left top;
+}
+
+
