@@ -19,6 +19,8 @@
   --font-display: var(--font-display), system-ui, sans-serif;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Base Body Styles */
 body {
   background-color: var(--color-bg-layout);

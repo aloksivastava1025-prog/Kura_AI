@@ -56,10 +56,10 @@ export default function Sidebar({
 
   // Reusable helper to style category badge counts dynamically across themes
   const getBadgeStyles = () => {
-    return `text-[10px] px-2 py-0.5 rounded-[4px] border transition-colors ${
+    return `text-[10px] px-2 py-0.5 rounded-[4px] transition-colors ${
       theme === "dark"
-        ? "text-[#8E8E93] bg-[#1A1A1C] border-[#2A2A2E]"
-        : "text-gray-500 bg-gray-100 border-gray-200/80"
+        ? "text-[#8E8E93] bg-[#2A2A2E]/50"
+        : "text-gray-600 bg-gray-200/50"
     }`;
   };
 
@@ -137,8 +137,8 @@ export default function Sidebar({
             } ${
               currentTab === "home"
                 ? theme === "dark"
-                  ? "bg-[#1E1E21] text-white border border-[#2D2D31] shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
-                  : "bg-white text-gray-900 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                  ? "bg-[#1C1C1E] text-white"
+                  : "bg-gray-100 text-gray-900"
                 : theme === "dark"
                   ? "text-[#8E8E93] hover:bg-[#151517] hover:text-white"
                   : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
@@ -159,8 +159,8 @@ export default function Sidebar({
             } ${
               currentTab === "search"
                 ? theme === "dark"
-                  ? "bg-[#1E1E21] text-white border border-[#2D2D31] shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
-                  : "bg-white text-gray-900 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                  ? "bg-[#1C1C1E] text-white"
+                  : "bg-gray-100 text-gray-900"
                 : theme === "dark"
                   ? "text-[#8E8E93] hover:bg-[#151517] hover:text-white"
                   : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
@@ -184,8 +184,8 @@ export default function Sidebar({
             } ${
               currentTab === "profile"
                 ? theme === "dark"
-                  ? "bg-[#1E1E21] text-white border border-[#2D2D31] shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
-                  : "bg-white text-gray-900 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                  ? "bg-[#1C1C1E] text-white"
+                  : "bg-gray-100 text-gray-900"
                 : theme === "dark"
                   ? "text-[#8E8E93] hover:bg-[#151517] hover:text-white"
                   : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
@@ -231,8 +231,8 @@ export default function Sidebar({
                 } ${
                   activeCategory === "all"
                     ? theme === "dark"
-                      ? "bg-[#1E1E21] text-white border border-[#2D2D31] shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
-                      : "bg-white text-gray-900 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                      ? "bg-[#1C1C1E] text-white"
+                      : "bg-gray-100 text-gray-900"
                     : theme === "dark"
                       ? "text-[#8E8E93] hover:bg-[#151517] hover:text-white"
                       : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
@@ -262,8 +262,8 @@ export default function Sidebar({
                 } ${
                   activeCategory === "rising_stars"
                     ? theme === "dark"
-                      ? "bg-[#1E1E21] text-white border border-[#2D2D31] shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
-                      : "bg-white text-gray-900 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                      ? "bg-[#1C1C1E] text-white"
+                      : "bg-gray-100 text-gray-900"
                     : theme === "dark"
                       ? "text-[#8E8E93] hover:bg-[#151517] hover:text-white"
                       : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
@@ -290,8 +290,8 @@ export default function Sidebar({
                 } ${
                   activeCategory === "ai_art"
                     ? theme === "dark"
-                      ? "bg-[#1E1E21] text-white border border-[#2D2D31] shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
-                      : "bg-white text-gray-900 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                      ? "bg-[#1C1C1E] text-white"
+                      : "bg-gray-100 text-gray-900"
                     : theme === "dark"
                       ? "text-[#8E8E93] hover:bg-[#151517] hover:text-white"
                       : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
@@ -321,8 +321,8 @@ export default function Sidebar({
                 } ${
                   activeCategory === "photography"
                     ? theme === "dark"
-                      ? "bg-[#1E1E21] text-white border border-[#2D2D31] shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
-                      : "bg-white text-gray-900 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                      ? "bg-[#1C1C1E] text-white"
+                      : "bg-gray-100 text-gray-900"
                     : theme === "dark"
                       ? "text-[#8E8E93] hover:bg-[#151517] hover:text-white"
                       : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
@@ -352,8 +352,8 @@ export default function Sidebar({
                 } ${
                   activeCategory === "design"
                     ? theme === "dark"
-                      ? "bg-[#1E1E21] text-white border border-[#2D2D31] shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
-                      : "bg-white text-gray-900 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                      ? "bg-[#1C1C1E] text-white"
+                      : "bg-gray-100 text-gray-900"
                     : theme === "dark"
                       ? "text-[#8E8E93] hover:bg-[#151517] hover:text-white"
                       : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"

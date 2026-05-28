@@ -46,7 +46,7 @@ export default function UploadModal({
 
   const handlePublish = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title.trim()) return;
+    if (!title.trim() || !description.trim()) return;
 
     setIsUploading(true);
     let finalImageUrl = mockAssetSelected || imageUrl || "/images/neon_oasis.png";
@@ -249,17 +249,18 @@ export default function UploadModal({
               />
             </div>
 
-            {/* Description */}
+            {/* The Recipe (Prompt) */}
             <div className="flex flex-col gap-1">
               <label className="text-[10px] font-bold uppercase tracking-wider text-txt-secondary">
-                Description / Context
+                The Recipe (Prompt) <span className="text-orange-primary">*</span>
               </label>
               <textarea
+                required
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Describe your visual concept, references, or story..."
-                maxLength={500}
-                rows={3}
+                placeholder="Required. Paste your exact prompt here: e.g., 'A cinematic wide shot of...'"
+                maxLength={1000}
+                rows={4}
                 className="w-full bg-white border border-gray-200 focus:border-orange-primary rounded-[8px] px-3 py-2 text-xs focus:outline-none transition-all resize-none"
               />
             </div>
